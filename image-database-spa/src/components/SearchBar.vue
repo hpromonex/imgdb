@@ -9,7 +9,7 @@
       @keyup.enter="submitSearch"
     />
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary border-0 rounded-circle" type="button" @click="submitSearch">
+      <button class="btn btn-light border-0 search-btn" type="button" @click="submitSearch">
         <font-awesome-icon icon="search" />
       </button>
     </div>
@@ -35,18 +35,29 @@ export default {
 .search-bar {
   width: 100%;
   max-width: 400px;
-  position: relative;
 }
 
 .search-bar .form-control {
-  padding-right: 40px;
-  border-radius: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .search-bar .input-group-append {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: -1px;
+}
+
+.search-bar .search-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: background-color 0.3s;
+}
+
+.search-bar .search-btn:hover {
+  background-color: #343a40;
+  color: white;
 }
 </style>
